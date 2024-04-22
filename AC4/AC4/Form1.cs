@@ -14,9 +14,6 @@ namespace AC3
 {
     public partial class Form1 : Form
     {
-        const string csvPath = @".\..\..\..\Files\consumo_agua.csv";
-        const string xmlPath = @".\..\..\..\Files\consumo_agua.xml";
-
         const int YearLimit = 2050, PoblationLimit = 20000;
 
         ComarcaDAO comarcaDAO = new ComarcaDAO(NpgsqlUtils.OpenConnection());
@@ -28,8 +25,8 @@ namespace AC3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            anySelector.Text = string.Empty;
-            comarcaSelector.Text = string.Empty;
+            anySelector.SelectedIndex = 0;
+            comarcaSelector.SelectedIndex = 0;
             poblacioSelector.Text = string.Empty;
             domesticXarxaSelector.Text = string.Empty;
             actEconomiquesSelector.Text = string.Empty;
@@ -47,7 +44,7 @@ namespace AC3
             List<Region> regions = comarcaDAO.GetAllRegions();
             LoadDataGrid(regions);
             LoadYears(regions);
-            LoadComarcas();
+            LoadRegionNames(regions);
         }
 
         private void LoadDataGrid(List<Region> regions)
@@ -69,25 +66,27 @@ namespace AC3
             }
         }
 
-        public static List<Region> ConvertCsvToList(string path)
-        {
-            using (var reader = new StreamReader(path))
-            {
-                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                {
-                    var regions = csv.GetRecords<Region>().ToList();
-                    return regions;
-                }
-            }
-        }
-
         private void LoadYears(List<Region> regions)
         {
             anySelector.Items.Clear();
+            anySelector.Items.Add("");
 
             for (int i = regions.Min(r => r.Any); i <= YearLimit; i++)
             {
                 anySelector.Items.Add(i);
+            }
+        }
+
+        private void LoadRegionNames(List<Region> regions)
+        {
+            comarcaSelector.Items.Clear();
+            comarcaSelector.Items.Add("");
+
+            List<string> names = regions.Select(x => x.NomComarca).Distinct().ToList();
+
+            foreach (string name in names)
+            {
+                comarcaSelector.Items.Add(name);
             }
         }
 
@@ -108,143 +107,6 @@ namespace AC3
             return names.Distinct().ToList();
         }
 
-        private void LoadComarcas()
-        {
-            comarcaSelector.Items.Clear();
-
-            List<string> comarcaNames = ComarcaNames(xmlPath);
-
-            foreach (string name in comarcaNames)
-            {
-                comarcaSelector.Items.Add(name);
-            }
-        }
-
-        // Para el csv
-        private void InsertComarcaCSV()
-        {
-            string nomComarca;
-            int anyComarca, codiComarca, poblacio, domesticXarxa, actEconomiques, total;
-            double consumDomestic;
-
-            try
-            {
-                nomComarca = comarcaSelector.Text;
-                if (nomComarca == string.Empty)
-                {
-                    throw new Exception("Debe elegir una comarca");
-                }
-                error.SetError(comarcaSelector, null);
-            }
-            catch (Exception ex)
-            {
-                error.SetError(comarcaSelector, ex.Message);
-                return;
-            }
-
-            try
-            {
-                if (anySelector.Text == string.Empty)
-                {
-                    throw new Exception("Debe elegir un año");
-                }
-                anyComarca = Convert.ToInt32(anySelector.Text);
-                
-                error.SetError(anySelector, null);
-            }
-            catch (Exception ex)
-            {
-                error.SetError(anySelector, ex.Message);
-                return;
-            }
-
-            List<Region> regions = comarcaDAO.GetAllRegions();
-
-            codiComarca = regions.FirstOrDefault(r => r.NomComarca == nomComarca).CodiComarca;
-
-            try
-            {
-                poblacio = Convert.ToInt32(poblacioSelector.Text);
-                error.SetError(poblacioSelector, null);
-            }
-            catch (Exception ex)
-            {
-                error.SetError(poblacioSelector, ex.Message);
-                return;
-            }
-            try
-            {
-                domesticXarxa = Convert.ToInt32(domesticXarxaSelector.Text);
-                error.SetError(domesticXarxaSelector, null);
-            }
-            catch (Exception ex)
-            {
-                error.SetError(domesticXarxaSelector, ex.Message);
-                return;
-            }
-            try
-            {
-                actEconomiques = Convert.ToInt32(actEconomiquesSelector.Text);
-                error.SetError(actEconomiquesSelector, null);
-            }
-            catch (Exception ex)
-            {
-                error.SetError(actEconomiquesSelector, ex.Message);
-                return;
-            }
-            try
-            {
-                total = Convert.ToInt32(totalSelector.Text);
-                error.SetError(totalSelector, null);
-            }
-            catch (Exception ex)
-            {
-                error.SetError(totalSelector, ex.Message);
-                return;
-            }
-            try
-            {
-                consumDomestic = Convert.ToDouble(consumDomesticSelector.Text);
-                error.SetError(consumDomesticSelector, null);
-            }
-            catch (Exception ex)
-            {
-                error.SetError(consumDomesticSelector, ex.Message);
-                return;
-            }
-
-            Region comarca = new Region()
-            {
-                Any = anyComarca,
-                CodiComarca = codiComarca,
-                NomComarca = nomComarca,
-                Poblacio = poblacio,
-                DomesticXarxa = domesticXarxa,
-                ActivitatsEconomiques = actEconomiques,
-                Total = total,
-                ConsumDomesticCapita = consumDomestic
-            };
-
-            using (StreamWriter writer = new StreamWriter(csvPath, append: true))
-            {
-                using (CsvWriter csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture))
-                {
-                    csvWriter.WriteRecord(comarca);
-                    writer.WriteLine();
-                    DataGridViewRow row = (DataGridViewRow)dataGrid.Rows[0].Clone();
-                    row.Cells[0].Value = comarca.Any;
-                    row.Cells[1].Value = comarca.CodiComarca;
-                    row.Cells[2].Value = comarca.NomComarca;
-                    row.Cells[3].Value = comarca.Poblacio;
-                    row.Cells[4].Value = comarca.DomesticXarxa;
-                    row.Cells[5].Value = comarca.ActivitatsEconomiques;
-                    row.Cells[6].Value = comarca.Total;
-                    row.Cells[7].Value = comarca.ConsumDomesticCapita;
-                    dataGrid.Rows.Add(row);
-                }
-            }
-        }
-
         private void InsertComarca()
         {
             string nomComarca;
@@ -253,21 +115,6 @@ namespace AC3
 
             try
             {
-                nomComarca = comarcaSelector.Text;
-                if (nomComarca == string.Empty)
-                {
-                    throw new Exception("Debe elegir una comarca");
-                }
-                error.SetError(comarcaSelector, null);
-            }
-            catch (Exception ex)
-            {
-                error.SetError(comarcaSelector, ex.Message);
-                return;
-            }
-
-            try
-            {
                 if (anySelector.Text == string.Empty)
                 {
                     throw new Exception("Debe elegir un año");
@@ -279,6 +126,21 @@ namespace AC3
             catch (Exception ex)
             {
                 error.SetError(anySelector, ex.Message);
+                return;
+            }
+
+            try
+            {
+                nomComarca = comarcaSelector.Text;
+                if (nomComarca == string.Empty)
+                {
+                    throw new Exception("Debe elegir una comarca");
+                }
+                error.SetError(comarcaSelector, null);
+            }
+            catch (Exception ex)
+            {
+                error.SetError(comarcaSelector, ex.Message);
                 return;
             }
 
@@ -349,24 +211,7 @@ namespace AC3
                 ConsumDomesticCapita = consumDomestic
             };
 
-            using (StreamWriter writer = new StreamWriter(csvPath, append: true))
-            {
-                using (CsvWriter csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture))
-                {
-                    csvWriter.WriteRecord(comarca);
-                    writer.WriteLine();
-                    DataGridViewRow row = (DataGridViewRow)dataGrid.Rows[0].Clone();
-                    row.Cells[0].Value = comarca.Any;
-                    row.Cells[1].Value = comarca.CodiComarca;
-                    row.Cells[2].Value = comarca.NomComarca;
-                    row.Cells[3].Value = comarca.Poblacio;
-                    row.Cells[4].Value = comarca.DomesticXarxa;
-                    row.Cells[5].Value = comarca.ActivitatsEconomiques;
-                    row.Cells[6].Value = comarca.Total;
-                    row.Cells[7].Value = comarca.ConsumDomesticCapita;
-                    dataGrid.Rows.Add(row);
-                }
-            }
+            comarcaDAO.AddRegion(comarca);
         }
 
         private void dataGrid_SelectionChanged(object sender, EventArgs e)
@@ -375,7 +220,7 @@ namespace AC3
             {
                 DataGridViewRow selectedRow = dataGrid.SelectedRows[0];
 
-                List<Region> regions = ConvertCsvToList(csvPath);
+                List<Region> regions = comarcaDAO.GetAllRegions();
 
                 poblacioMayor20000.Text = Convert.ToInt32(selectedRow.Cells["Poblacio"].Value.ToString()) > PoblationLimit ? "Sí" : "No";
                 domesticMedio.Text = Convert.ToString(Convert.ToInt32(selectedRow.Cells["DomesticXarxa"].Value.ToString()) / Convert.ToInt32(selectedRow.Cells["Poblacio"].Value.ToString()));

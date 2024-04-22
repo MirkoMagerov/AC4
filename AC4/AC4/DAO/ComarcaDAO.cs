@@ -27,7 +27,6 @@ namespace AC3.DAO
                     {
                         if (reader.Read())
                         {
-                            // ORM: [--,--,--] -----> ContactDTO
                             region = NpgsqlUtils.GetRegion(reader);
                         }
                     }

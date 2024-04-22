@@ -8,7 +8,7 @@ namespace AC3.Connections
         public static string OpenConnection()
         {
             IConfiguration config = new ConfigurationBuilder()
-                .AddJsonFile(@"D:\MiroslavMagerov\AC-3\AC3\AC3\TopSecret\appsettings.json")
+                .AddJsonFile(@"E:\DAMv1\AC4\AC4\AC4\TopSecret\appsettings.json")
                 .Build();
 
             return config.GetConnectionString("MyPostgresConn");

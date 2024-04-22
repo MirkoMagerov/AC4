@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\DAMv1\\AC4\\AC4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|e:\\damv1\\ac4\\ac4\\ac4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|solutionrelative:ac4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|E:\\DAMv1\\AC4\\AC4\\ac4\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|solutionrelative:ac4\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|e:\\damv1\\ac4\\ac4\\ac4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|solutionrelative:ac4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|E:\\DAMv1\\AC4\\AC4\\ac4\\region.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|solutionrelative:ac4\\region.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|E:\\DAMv1\\AC4\\AC4\\ac4\\connections\\npgsqlutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|solutionrelative:ac4\\connections\\npgsqlutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|E:\\DAMv1\\AC4\\AC4\\ac4\\dao\\comarcadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|solutionrelative:ac4\\dao\\comarcadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|E:\\DAMv1\\AC4\\AC4\\ac4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|solutionrelative:ac4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|E:\\DAMv1\\AC4\\AC4\\ac4\\dao\\icomarcadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE437D8E-8116-4931-B77C-5B512372B679}|AC4\\AC4.csproj|solutionrelative:ac4\\dao\\icomarcadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "E:\\DAMv1\\AC4\\AC4\\AC4\\Form1.cs",
+              "RelativeDocumentMoniker": "AC4\\Form1.cs",
+              "ToolTip": "E:\\DAMv1\\AC4\\AC4\\AC4\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "AC4\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T18:34:43.094Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "E:\\DAMv1\\AC4\\AC4\\AC4\\Form1.cs",
+              "RelativeDocumentMoniker": "AC4\\Form1.cs",
+              "ToolTip": "E:\\DAMv1\\AC4\\AC4\\AC4\\Form1.cs",
+              "RelativeToolTip": "AC4\\Form1.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAACEAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T21:27:27.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "E:\\DAMv1\\AC4\\AC4\\AC4\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "AC4\\Form1.Designer.cs",
+              "ToolTip": "E:\\DAMv1\\AC4\\AC4\\AC4\\Form1.Designer.cs",
+              "RelativeToolTip": "AC4\\Form1.Designer.cs",
+              "ViewState": "AQIAAG0BAAAAAAAAAAAswH0BAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T21:27:11.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Region.cs",
+              "DocumentMoniker": "E:\\DAMv1\\AC4\\AC4\\AC4\\Region.cs",
+              "RelativeDocumentMoniker": "AC4\\Region.cs",
+              "ToolTip": "E:\\DAMv1\\AC4\\AC4\\AC4\\Region.cs",
+              "RelativeToolTip": "AC4\\Region.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T21:24:21.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NpgsqlUtils.cs",
+              "DocumentMoniker": "E:\\DAMv1\\AC4\\AC4\\AC4\\Connections\\NpgsqlUtils.cs",
+              "RelativeDocumentMoniker": "AC4\\Connections\\NpgsqlUtils.cs",
+              "ToolTip": "E:\\DAMv1\\AC4\\AC4\\AC4\\Connections\\NpgsqlUtils.cs",
+              "RelativeToolTip": "AC4\\Connections\\NpgsqlUtils.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T14:16:28.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IComarcaDAO.cs",
+              "DocumentMoniker": "E:\\DAMv1\\AC4\\AC4\\AC4\\DAO\\IComarcaDAO.cs",
+              "RelativeDocumentMoniker": "AC4\\DAO\\IComarcaDAO.cs",
+              "ToolTip": "E:\\DAMv1\\AC4\\AC4\\AC4\\DAO\\IComarcaDAO.cs",
+              "RelativeToolTip": "AC4\\DAO\\IComarcaDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T14:16:28.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ComarcaDAO.cs",
+              "DocumentMoniker": "E:\\DAMv1\\AC4\\AC4\\AC4\\DAO\\ComarcaDAO.cs",
+              "RelativeDocumentMoniker": "AC4\\DAO\\ComarcaDAO.cs",
+              "ToolTip": "E:\\DAMv1\\AC4\\AC4\\AC4\\DAO\\ComarcaDAO.cs",
+              "RelativeToolTip": "AC4\\DAO\\ComarcaDAO.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAAAI4AAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T14:16:28.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DAMv1\\AC4\\AC4\\AC4\\Program.cs",
+              "RelativeDocumentMoniker": "AC4\\Program.cs",
+              "ToolTip": "E:\\DAMv1\\AC4\\AC4\\AC4\\Program.cs",
+              "RelativeToolTip": "AC4\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAIwBAAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T14:16:29.049Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

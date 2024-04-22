@@ -247,7 +247,7 @@
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 21;
-            button2.Text = "Guardar";
+            button2.Text = "Persistir";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
